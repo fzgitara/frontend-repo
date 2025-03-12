@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/cache": "^11.14.0",
+    "@mui/material": "^6.4.7",
+    "@mui/material-nextjs": "^6.4.3",
     "@reduxjs/toolkit": "^2.6.1",
     "next": "15.2.2",
     "react": "^19.0.0",
@@ -20,5 +23,8 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "typescript": "^5"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0"
   }
 }
