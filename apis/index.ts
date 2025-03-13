@@ -7,7 +7,7 @@ let BACKEND_URL: string;
 
 switch (env) {
   case 'development':
-    BACKEND_URL = 'http://localhost:3000'
+    BACKEND_URL = 'http://localhost:8000'
     break;
   default:
     break;
