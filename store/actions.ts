@@ -14,14 +14,13 @@ export const userLogin = createAsyncThunk(
         }
       };
 
-      const { data } = await axios.post(
+      const resp = await axios.post(
         `${BACKEND_URL}${URL.LOGIN}`, 
         { email, password },
         config
       );
 
-      localStorage.setItem('userToken', data.token);
-      return data;
+      return resp.data;
     } catch (error: any) {
       if (error.response && error.response.data) {
         return rejectWithValue(error.response.data);

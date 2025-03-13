@@ -15,24 +15,30 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const user = useSelector((state: any) => state.auth.user)
-  const loading = useSelector((state: any) => state.auth.loading)
+  const user = useSelector((state: any) => state.auth.user);
+  const loading = useSelector((state: any) => state.auth.loading);
   const dispatch = useDispatch<any>();
   const router = useRouter();
 
   useEffect(() => {
-    if (user) router.push('/main');
+    if (user) {
+      router.push('/main');
+      router.refresh();
+    }
   }, [user, dispatch]);
 
   const handleChangeEmail = (e: any) => {
+    e.preventDefault();
     setEmail(e.target.value);
   };
 
   const handleChangePassword = (e: any) => {
+    e.preventDefault();
     setPassword(e.target.value);
   };
 
-  const handleLogin = () => {
+  const handleLogin = (e: any) => {
+    e.preventDefault();
     const data = {
       email,
       password

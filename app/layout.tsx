@@ -24,16 +24,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <Providers>
-      <html lang='en'>
-        <body className={roboto.variable}>
-            <AppRouterCacheProvider>
-              <ThemeProvider theme={theme}>
-                {children}
-              </ThemeProvider>
-            </AppRouterCacheProvider>
-        </body>
-      </html>
-    </Providers>
+    <html lang='en'>
+      <body className={roboto.variable} suppressHydrationWarning>
+        <Providers>
+          <AppRouterCacheProvider>
+            <ThemeProvider theme={theme}>
+              {children}
+            </ThemeProvider>
+          </AppRouterCacheProvider>
+        </Providers>
+      </body>
+    </html>
   );
 }
